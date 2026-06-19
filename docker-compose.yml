@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - relatosdepapel-net
+    environment:
+      RABBITMQ_DEFAULT_USER: dwfs
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+
+networks:
+  relatosdepapel-net:
+    external: true
